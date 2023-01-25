@@ -1,0 +1,17 @@
+
+body {
+    //reset
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgba(226, 69, 82, 0.89);
+}
+
+
+#root {
+    height: 100vh;
+    margin: 1rem;
+
+    display: flex;
+    justify-content: center;
+}
