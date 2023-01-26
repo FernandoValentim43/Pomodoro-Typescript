@@ -2,6 +2,8 @@ import React from 'react'
 
 export const Button = () => {
   return (
-    <div>Button</div>
+    <div className="button-div">
+        <button></button>
+    </div>
   )
 }
