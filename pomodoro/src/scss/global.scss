@@ -1,17 +1,33 @@
+@use "./button";
+@use "./timer";
 
-body {
-    //reset
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: rgba(226, 69, 82, 0.89);
+$breakpoint-tablet: 600px;
+$tomato-color: #f0482a;
+
+@mixin flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
+body {
+  //reset
+  margin: 0;
+  padding: 0;
+}
 
-#root {
-    height: 100vh;
-    margin: 1rem;
+.main {
+  @include flex;
 
-    display: flex;
-    justify-content: center;
+  section {
+    @include flex;
+    background-color: $tomato-color;
+
+    width: 32rem;
+
+    @media (max-width: $breakpoint-tablet) {
+      width: 100%;
+    }
+  }
 }

@@ -1,9 +1,10 @@
-import React from 'react'
+import React from "react";
 
-export const Button = () => {
-  return (
-    <div className="button-div">
-        <button></button>
-    </div>
-  )
+interface Props {
+  text: string;
+  id?: string;
 }
+
+export const Button = ({ text, id }: Props) => {
+  return <button id={id} className="button">{text}</button>;
+};
