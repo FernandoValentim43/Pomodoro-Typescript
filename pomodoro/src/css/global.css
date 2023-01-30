@@ -40,6 +40,11 @@ body {
   background-color: #f0482a;
   width: 30rem;
 }
+@media (max-width: 550px) {
+  .main-container {
+    width: 100vw;
+  }
+}
 
 .main {
   display: flex;
@@ -58,21 +63,4 @@ body {
   flex-direction: column;
   width: 100%;
   height: 100%;
-}
-
-.circle {
-  margin: 1.5rem;
-  margin-top: 2.5rem;
-  width: 22rem;
-  height: 22rem;
-  border-radius: 50%;
-  background-color: white;
-}
-@media (max-width: 450px) {
-  .circle {
-    width: 100vw;
-    margin-top: 4rem;
-    width: 75vw;
-    height: 75vw;
-  }
 }/*# sourceMappingURL=global.css.map */
