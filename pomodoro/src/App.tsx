@@ -1,5 +1,4 @@
-import { Button } from "./components/Button";
-import { Timer } from "./components/Timer";
+import  TimerContainer from "./components/TimerContainer";
 
 function App() {
   return (
@@ -8,10 +7,12 @@ function App() {
         <section className="main">
 
           <section className="upper">
-            <div className="circle"></div>
+            <div className="circle">
+              <TimerContainer/>
+            </div>
           </section>
-          <section className="lower">b</section>
 
+          
         </section>
       </section>
     </div>
