@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import { Timer } from "./Timer";
 
 const TimerControls = () => {
-  const [time, setTime] = useState(60);
+  const [time, setTime] = useState(2340);
 
-  const handleReset = () => setTime(60);
 
   return (
     <div>
-      <Timer time={time} onReset={handleReset} />
+      <Timer time={time} onReset={() => setTime(2340)} />
+
+      
     </div>
   );
 };

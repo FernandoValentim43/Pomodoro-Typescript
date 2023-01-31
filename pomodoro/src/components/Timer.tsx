@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { CircularProgressbar } from 'react-circular-progressbar';
 
 interface Props {
   time: number;
@@ -9,6 +10,7 @@ export const Timer = ({ time, onReset }: Props) => {
   const [minutes, setMinutes] = useState(Math.floor(time / 60));
   const [seconds, setSeconds] = useState(time % 60);
   const [stopped, setStopped] = useState(true);
+ 
 
   let interval: NodeJS.Timeout;
 
@@ -43,8 +45,9 @@ export const Timer = ({ time, onReset }: Props) => {
   return (
     <div>
       <h2 className="timer">
-        {minutes < 10 ? `0${minutes}` : minutes}:
-        {seconds < 10 ? `0${seconds}` : seconds}
+      {/* <CircularProgressbar value={seconds} maxValue={60} text={(minutes < 10 ? `0${minutes}` : minutes) + ":" + (seconds < 10 ? `0${seconds}` : seconds) } /> */}
+      {minutes < 10 ? `0${minutes}` : minutes} :  {seconds < 10 ? `0${seconds}` : seconds} 
+
       </h2>
       <button className="stop-button" onClick={handleStop}>
         {stopped ? "Start" : "Stop"}
