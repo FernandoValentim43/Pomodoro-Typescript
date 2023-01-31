@@ -32,7 +32,7 @@ export const Timer = ({ time, onReset }: Props) => {
     clearInterval(interval);
     setMinutes(Math.floor(time / 60));
     setSeconds(time % 60);
-    setStopped(false);
+    setStopped(true);
     onReset();
   };
 
