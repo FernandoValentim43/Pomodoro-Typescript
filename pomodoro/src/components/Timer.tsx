@@ -8,7 +8,7 @@ interface Props {
 export const Timer = ({ time, onReset }: Props) => {
   const [minutes, setMinutes] = useState(Math.floor(time / 60));
   const [seconds, setSeconds] = useState(time % 60);
-  const [stopped, setStopped] = useState(false);
+  const [stopped, setStopped] = useState(true);
 
   let interval: NodeJS.Timeout;
 
