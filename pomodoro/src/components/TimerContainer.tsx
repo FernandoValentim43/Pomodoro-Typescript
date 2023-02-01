@@ -6,40 +6,47 @@ const TIME = 130;
 const TimerControls = () => {
   const [time, setTime] = useState(TIME);
   const [stopped, setStopped] = useState(true);
-  
+
   let interval: NodeJS.Timeout;
 
   useEffect(() => {
-    if(!stopped && (time !== 0)) {
-      interval = setTimeout(() => setTime(time - 1) , 500)
-      console.log(time)
+    if (!stopped && time !== 0) {
+      interval = setTimeout(() => setTime(time - 1), 1000);
     } else {
-      clearInterval(interval)
+      clearTimeout(interval);
     }
-  }, [time,stopped])
+    return () => {
+      clearTimeout(interval);
+    };
+  }, [time, stopped]);
 
-  
   const handleReset = () => {
-    {stopped? "" : setStopped(!stopped)}
-    clearInterval(interval)
-    setTime(TIME);    
+    {
+      stopped ? "" : setStopped(!stopped);
+    }
+    clearInterval(interval);
+    setTime(TIME);
   };
 
   const handleStop = () => {
+    clearTimeout(interval);
     setStopped(!stopped);
   };
 
-
   return (
-    <div>
-      <Timer timeMax={TIME} timeSec={time} />
-      <button className="stop-button" onClick={handleStop}>
-        {stopped ? "Start" : "Stop"}
-      </button>
-      <button className="reset-button" onClick={handleReset}>
-        Reset
-      </button>
-      
+    <div className="timeContainer">
+      <section className="timerContainer">
+        <Timer timeMax={TIME} timeSec={time} setStopped={setStopped} stopped={stopped} />
+      </section>
+
+      <section className="buttonContainer">
+        <button className="button" onClick={handleStop}>
+          {stopped ? "Start" : "Stop"}
+        </button>
+        <button className="button" onClick={handleReset}>
+          Reset
+        </button>
+      </section>
     </div>
   );
 };
