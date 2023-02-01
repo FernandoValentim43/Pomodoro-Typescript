@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Timer } from "./Timer";
 
+const TIME = 130;
+
 const TimerControls = () => {
-  const [time, setTime] = useState(5);
+  const [time, setTime] = useState(TIME);
   const [stopped, setStopped] = useState(true);
   
   let interval: NodeJS.Timeout;
 
   useEffect(() => {
     if(!stopped && (time !== 0)) {
-      interval = setTimeout(() => setTime(time - 1) , 1000)
+      interval = setTimeout(() => setTime(time - 1) , 500)
       console.log(time)
     } else {
       clearInterval(interval)
@@ -18,9 +20,9 @@ const TimerControls = () => {
 
   
   const handleReset = () => {
-    clearInterval(interval);
-    setStopped(true);
-    setTime(60);
+    {stopped? "" : setStopped(!stopped)}
+    clearInterval(interval)
+    setTime(TIME);    
   };
 
   const handleStop = () => {
@@ -30,8 +32,7 @@ const TimerControls = () => {
 
   return (
     <div>
-      <Timer timeSec={time} stopped={stopped} />
-
+      <Timer timeMax={TIME} timeSec={time} />
       <button className="stop-button" onClick={handleStop}>
         {stopped ? "Start" : "Stop"}
       </button>
