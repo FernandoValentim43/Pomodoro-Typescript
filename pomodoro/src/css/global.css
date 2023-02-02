@@ -14,20 +14,19 @@
   border: none;
   color: #de644e;
   background-color: #f5d5d5;
-  transition: all 0.2s, box-shadow 0.08s ease-in;
-  -moz-user-select: none;
-   -ms-user-select: none;
-       user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
 }
 
 .button:hover {
   background-color: #f1c5c5;
 }
 
+.button:focus {
+  outline: none;
+}
+
 .buttonContainer {
-  margin-top: 3rem;
+  margin-top: 4rem;
+  margin-bottom: 8rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,34 +37,42 @@
   margin-bottom: 2.5rem;
 }
 
-.CircularProgressbar {
-  width: 22rem;
+#outer .CircularProgressbar {
   vertical-align: middle;
 }
-@media (max-width: 460px) {
-  .CircularProgressbar {
-    width: 90vw;
-  }
-}
-
-.CircularProgressbar .CircularProgressbar-path {
+#outer .CircularProgressbar .CircularProgressbar-path {
   stroke: #f5d5d5;
   stroke-linecap: round;
   transition: stroke-dashoffset 0.5s ease 0s;
   stroke-width: 5;
 }
-
-.CircularProgressbar .CircularProgressbar-trail {
+#outer .CircularProgressbar .CircularProgressbar-trail {
   stroke: #dc5c45;
   stroke-width: 5;
 }
-
-.CircularProgressbar .CircularProgressbar-text {
+#outer .CircularProgressbar .CircularProgressbar-text {
   font-family: "Oswald", sans-serif;
   fill: #f5d5d5;
   font-size: 1.2rem;
   dominant-baseline: middle;
   text-anchor: middle;
+}
+@media (max-width: 460px) {
+  #outer {
+    width: 90vw;
+  }
+}
+
+#inner .CircularProgressbar .CircularProgressbar-path {
+  stroke: green;
+}
+#inner .CircularProgressbar .CircularProgressbar-trail {
+  stroke: transparent;
+}
+@media (max-width: 460px) {
+  #inner {
+    width: 90vw;
+  }
 }
 
 html,

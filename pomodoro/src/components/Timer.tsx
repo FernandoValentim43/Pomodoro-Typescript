@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { CircularProgressbar } from "react-circular-progressbar";
+import {
+  CircularProgressbar,
+  CircularProgressbarWithChildren,
+} from "react-circular-progressbar";
 
 interface Props {
   timeSec: number;
@@ -8,19 +11,14 @@ interface Props {
   stopped: boolean;
 }
 
-export const Timer = ({ timeSec, setStopped, stopped , timeMax}: Props) => {
+export const Timer = ({ timeSec, setStopped, stopped, timeMax }: Props) => {
   const minutes = Math.floor(timeSec / 60);
   const seconds = timeSec % 60;
 
   return (
     <div>
-      <div
-        className="timer"
-        /* onClick={() => {
-          setStopped(!stopped);
-        }} */
-      >
-        <CircularProgressbar
+      <div id="outer">
+        {/*  <CircularProgressbar
           value={timeSec}
           maxValue={timeMax}
           text={
@@ -28,7 +26,22 @@ export const Timer = ({ timeSec, setStopped, stopped , timeMax}: Props) => {
             ":" +
             (seconds < 10 ? `0${seconds}` : seconds)
           }
-        />
+          
+        /> */}
+
+        <CircularProgressbarWithChildren
+          value={timeSec}
+          maxValue={timeMax}
+          text={
+            (minutes < 10 ? `0${minutes}` : minutes) +
+            ":" +
+            (seconds < 10 ? `0${seconds}` : seconds)
+          }
+        >
+          <div id={"inner"} style={{ width: "90%" }}>
+            <CircularProgressbar  value={75} maxValue={100}  />
+          </div>
+        </CircularProgressbarWithChildren>
       </div>
     </div>
   );

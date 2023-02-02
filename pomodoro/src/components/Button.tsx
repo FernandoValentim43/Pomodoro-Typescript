@@ -11,27 +11,27 @@ export const Button = ({ type, onClick }: Props) => {
     case "reset":
       return (
         <button className={"button " + " reset"} onClick={onClick} >
-          <ArrowClockwise size={36}  weight="fill"/>
+          <ArrowClockwise size={42}  weight="fill"/>
         </button>
       );
     case "skip":
       return (
         <button className={"button " + " skip"}>
-          <FastForward size={36} weight="fill"/>
+          <FastForward size={42} weight="fill"/>
         </button>
       );
 
     case "pause":
       return (
         <button className={"button " + " pause"} onClick={onClick}>
-          <Pause size={44}  weight="fill"/>
+          <Pause size={50}  weight="fill"/>
         </button>
       );
 
     case "unpause":
       return (
         <button className={"button " + " unpause"} onClick={onClick}>
-          <Play size={44} weight="fill"/>
+          <Play size={50} weight="fill"/>
         </button>
       );
   }

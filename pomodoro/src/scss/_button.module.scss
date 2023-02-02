@@ -19,19 +19,21 @@
   background-color: $white;
 
 
-  transition: all .2s,box-shadow .08s ease-in;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+ 
 }
 
 .button:hover {
   background-color: darken( $white, 4%);
+}
 
+.button:focus {
+  outline: none;
+  
 }
 
 .buttonContainer {
-  margin-top: 3rem;
+  margin-top: 4rem;
+  margin-bottom: 8rem;
   display: flex;
   justify-content: center;
   align-items: center;
