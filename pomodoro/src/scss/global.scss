@@ -1,18 +1,20 @@
-@use "./button";
-@use "./timer";
-@use "./progress";
+@import "variables";
+@import "./mixins";
 
-$breakpoint-tablet: 460px;
-$tomato-color: #de644e;
+@import "./button.module";
+@import "./timer";
+@import "./progress";
 
-html, body {margin: 0; height: 100%; overflow: hidden}
 
-@mixin flex {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+
+html, body {
+  margin: 0; 
+  height: 100%; 
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+
 }
+
 
 body {
   //reset
@@ -21,8 +23,9 @@ body {
 
   @include flex;
   height: 100vh;
+  background-color: $tomato;
 
-  background-color: $tomato-color;
+ 
 }
 
 .main-container {

@@ -1,20 +1,23 @@
+@import "variables";
+
+@import "./mixins";
+
 .button {
+  @include flex;
+
   text-align: center;
   font-family: "Nunito", sans-serif !important;
-  font-weight: 700;
   text-transform: uppercase;
-  color: #e32424;
-
+  padding: 1em;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
   border: none;
-  border-radius: 40px;
- 
-
- 
+  color: $tomato;
   background-color: #f5d5d5;
 }
 
 .buttonContainer {
-  background-color: red;
   display: flex;
   justify-content: center;
   align-items: center;

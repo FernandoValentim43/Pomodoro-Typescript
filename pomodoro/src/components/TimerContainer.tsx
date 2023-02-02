@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Timer } from "./Timer";
+import { Button } from "./Button";
 
 const TIME = 130;
 
@@ -36,16 +37,24 @@ const TimerControls = () => {
   return (
     <div className="timeContainer">
       <section className="timerContainer">
-        <Timer timeMax={TIME} timeSec={time} setStopped={setStopped} stopped={stopped} />
+        <Timer
+          timeMax={TIME}
+          timeSec={time}
+          setStopped={setStopped}
+          stopped={stopped}
+        />
       </section>
 
       <section className="buttonContainer">
-        <button className="button" onClick={handleStop}>
-          {stopped ? "Start" : "Stop"}
-        </button>
-        <button className="button" onClick={handleReset}>
-          Reset
-        </button>
+        <Button type={"reset"} onClick={handleReset} />
+
+        {stopped ? (
+          <Button type={"pause"} onClick={handleStop} />
+        ) : (
+          <Button type={"unpause"} onClick={handleStop} />
+        )}
+
+        <Button type={"skip"} onClick={handleStop} />
       </section>
     </div>
   );
