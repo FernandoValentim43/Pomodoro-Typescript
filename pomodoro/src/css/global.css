@@ -37,6 +37,9 @@
   margin-bottom: 2.5rem;
 }
 
+#outer {
+  min-width: 290px !important;
+}
 #outer .CircularProgressbar {
   vertical-align: middle;
 }

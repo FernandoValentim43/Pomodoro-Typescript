@@ -1,6 +1,7 @@
 @import "variables";
 
 #outer {
+  min-width: 290px !important;
   .CircularProgressbar {
     vertical-align: middle;
   }
