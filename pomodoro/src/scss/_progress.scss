@@ -1,19 +1,16 @@
-$breakpoint-tablet: 460px;
-$tomato-color: #f0482a;
+@import "variables";
 
 .CircularProgressbar {
   width: 22rem;
   vertical-align: middle;
 
-
   @media (max-width: $breakpoint-tablet) {
     width: 90vw;
   }
-
 }
 
 .CircularProgressbar .CircularProgressbar-path {
-  stroke: #f5d5d5;
+  stroke: $white;
   stroke-linecap: round;
   transition: stroke-dashoffset 0.5s ease 0s;
 
@@ -21,18 +18,15 @@ $tomato-color: #f0482a;
 }
 
 .CircularProgressbar .CircularProgressbar-trail {
-  stroke: #444444;
-  stroke-width: 5;
+  stroke: $dark-tomato;
 
+  stroke-width: 5;
 }
 
 .CircularProgressbar .CircularProgressbar-text {
-  font-family: 'Oswald', sans-serif;
-    fill: #f5d5d5;
-  font-size: 16px;
+  font-family: "Oswald", sans-serif;
+  fill: $white;
+  font-size: 1.2rem;
   dominant-baseline: middle;
   text-anchor: middle;
 }
-
-
-

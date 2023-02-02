@@ -8,7 +8,7 @@ interface Props {
   stopped: boolean;
 }
 
-export const Timer = ({ timeSec, setStopped, stopped }: Props) => {
+export const Timer = ({ timeSec, setStopped, stopped , timeMax}: Props) => {
   const minutes = Math.floor(timeSec / 60);
   const seconds = timeSec % 60;
 
@@ -16,13 +16,13 @@ export const Timer = ({ timeSec, setStopped, stopped }: Props) => {
     <div>
       <div
         className="timer"
-        onClick={() => {
+        /* onClick={() => {
           setStopped(!stopped);
-        }}
+        }} */
       >
         <CircularProgressbar
           value={timeSec}
-          maxValue={130}
+          maxValue={timeMax}
           text={
             (minutes < 10 ? `0${minutes}` : minutes) +
             ":" +

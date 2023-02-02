@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Timer } from "./Timer";
 import { Button } from "./Button";
 
-const TIME = 130;
+const TIME = 15;
 
 const TimerControls = () => {
   const [time, setTime] = useState(TIME);
@@ -49,9 +49,9 @@ const TimerControls = () => {
         <Button type={"reset"} onClick={handleReset} />
 
         {stopped ? (
-          <Button type={"pause"} onClick={handleStop} />
-        ) : (
           <Button type={"unpause"} onClick={handleStop} />
+          ) : (
+          <Button type={"pause"} onClick={handleStop} />
         )}
 
         <Button type={"skip"} onClick={handleStop} />
